@@ -1,0 +1,25 @@
+package com.safetrade.safe_trade.commons.exceptions;
+
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.http.HttpStatus;
+
+@Setter
+@Getter
+public class CommonException extends RuntimeException{
+    private HttpStatus status;
+
+    public CommonException(String message) {
+        this(message, HttpStatus.INTERNAL_SERVER_ERROR); // 500
+    }
+
+    public CommonException(String message, HttpStatus status) {
+        super(message);
+        this.status = status;
+    }
+
+
+//    public HttpStatus getStatus() {
+//        return status;
+//    } // 세터와 게터있으니 제거
+}

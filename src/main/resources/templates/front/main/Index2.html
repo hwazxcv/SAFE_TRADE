@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{front/layouts/main}">
+
+<main layout:fragment="content">
+    <!-- 섹션 -->
+    <div class="section inner">
+        <!-- 구매 목록 -->
+        <div class="view view01 active">
+            <div class="title">
+                <h2>상품 목록</h2>
+
+            <button type="button" class="btn_more">+ More View</button>
+        </div>
+
+        <!-- 삽니다 카테  -->
+        <div class="view view02">222</div>
+
+
+        <!-- 마이 페이지 -->
+        <div class="view view03">
+            <div class="mypage_con">
+                <div class="my_box">
+                    <div class="profile">
+                        <img th:src="@{/front/images/profile.png}" alt="프로필">
+                    </div>
+                    <div class="my_info">
+                        <strong>GOLD</strong>
+                        <p>홍길동 회원님의 신용등급은 <span>골드(85점)</span> 입니다.</p>
+                    </div>
+                </div>
+                <div class="mileage_box">
+                    <ul class="mileage">
+                        <li>
+                            <ul class="save">
+                                <li>사용가능 마일리지</li>
+                                <li><strong>1800</strong>원</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="total">
+                                <li>총 마일리지</li>
+                                <li><span>1800</span>원</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="mil_btn">
+                        <button type="button" class="btn_basic">충전하기</button>
+                        <button type="button" class="btn_basic btn_line">출금하기</button>
+                    </div>
+                </div>
+            </div>
+            <div class="title">
+                <h2>나의 거래현황</h2>
+            </div>
+            <div class="my_exchange">
+                <div class="sell_box">
+                    <ul class="case">
+                        <li>
+                            <p>판매등록</p>
+                            <span>0</span>
+                        </li>
+                        <li>
+                            <p>흥정신청</p>
+                            <span>0</span>
+                        </li>
+                        <li>
+                            <button type="button" class="btn_basic btn_black w100" onclick="location.href='/mypage/trade/add'">판매등록</button>
+                        </li>
+                    </ul>
+                    <ul class="step">
+                        <li>
+                            <p><span>STEP01</span>입금대기</p>
+                            <div class="line"></div>
+                            <strong>0</strong>
+                        </li>
+                        <li>
+                            <p><span>STEP02</span>판매중</p>
+                            <div class="line"></div>
+                            <strong>0</strong>
+                        </li>
+                        <li>
+                            <p><span>STEP03</span>판매종료</p>
+                            <div class="line"></div>
+                            <button type="button">자세히보기</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="buy_box">
+                    <ul class="case">
+                        <li>
+                            <p>구매등록</p>
+                            <span>0</span>
+                        </li>
+                        <li>
+                            <p>흥정신청</p>
+                            <span>0</span>
+                        </li>
+                        <li>
+                            <button type="button" class="btn_basic btn_black w100">구매등록</button>
+                        </li>
+                    </ul>
+                    <ul class="step">
+                        <li>
+                            <p><span>STEP01</span>입금예정</p>
+                            <div class="line"></div>
+                            <strong>0</strong>
+                        </li>
+                        <li>
+                            <p><span>STEP02</span>구매중</p>
+                            <div class="line"></div>
+                            <strong>0</strong>
+                        </li>
+                        <li>
+                            <p><span>STEP03</span>구매종료</p>
+                            <div class="line"></div>
+                            <button type="button">자세히보기</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="title">
+
+                <!-- 최근 거래 -->
+                <h2>최근 거래내역</h2>
+            </div>
+            <div class="list_table">
+                <ul class="thead">
+                    <li class="num">순서</li>
+                    <li class="name">게시글명</li>
+                    <li class="type">거래종류</li>
+                    <li class="price">거래금액</li>
+                    <li class="time">거래시간</li>
+                </ul>
+                <div class="tbody">
+                    <div class="list">
+                        <a href="">
+                            <div class="num">1</div>
+                            <div class="name"> ★안전한 200% 신용★ 현재 접속중입니다.</div>
+                            <div class="type">구매</div>
+                            <div class="price">100,000</div>
+                            <div class="time">14:26</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn_more">+ More View</button>
+        </div>
+    </div>
+    <!-- //섹션 -->
+</main>
+</html>

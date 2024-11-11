@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board</title>
+
+    <link rel="stylesheet" href="./include/css/reset.css">
+    <link rel="stylesheet" href="./include/css/main.css">
+    <link rel="stylesheet" href="./include/css/sub.css">
+    
+</head>
+<body>
+    <!-- 해더 -->
+    <div class="header">
+        <div class="head_top">
+            <div class="inner">
+                <ul class="top_menu">
+                    <li>
+                        <a href="">회원가입</a>
+                    </li>
+                    <li>
+                        <a href="">로그인</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="head inner">
+            <div class="logo">
+                <img src="./include/images/logo.png" alt="로고">
+            </div>
+            <div class="search_con">
+                <ul class="radio_box">
+                    <li>
+                        <input type="radio" class="radio_style" id="buy" name="search_radio" checked>
+                        <label for="buy"><span class="radio_pointer"></span> 삽니다</label>
+                    </li>
+                    <li>
+                        <input type="radio" class="radio_style" id="sale" name="search_radio">
+                        <label for="sale"><span class="radio_pointer"></span> 팝니다</label>
+                    </li>
+                </ul>
+                <div class="control">
+                    <div class="search_box">
+                        <input type="text" placeholder="검색어를 입력하세요.">
+                    </div>
+                    <button type="button" class="btn_search">
+                        <img src="./include/images/icon-search.png" alt="검색아이콘">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //해더 -->
+
+    <div class="section inner">
+        <div class="board_con">
+            <div class="board_title">
+                <h2>구매등록
+                    <span>구매 등록을 위하여 아래 항목을 작성해 주세요.</span>
+                </h2>
+            </div>
+            <div class="board_table">
+                <div class="bt_title">물품등록</div>
+                <div class="bt_box">
+                    <div class="bt_layer">
+                        <div class="bt_l">구매금액 <span class="star">*</span></div>
+                        <div class="bt_r">
+                            <input type="number" class="input_style" placeholder="3,000원 이상, 10원 단위로 등록 가능">
+                        </div>
+                    </div>
+                    <div class="bt_layer">
+                        <div class="bt_l">물품제목 <span class="star">*</span></div>
+                        <div class="bt_r">
+                            <input type="text" class="input_style" placeholder="">
+                        </div>
+                    </div>
+                    <div class="bt_layer">
+                        <div class="bt_l">상세설명 <span class="star">*</span></div>
+                        <div class="bt_r">
+                            <ul class="radio_box">
+                                <li>
+                                    <input type="radio" class="radio_style" id="txtarea1" name="txtarea" checked>
+                                    <label for="txtarea1"><span class="radio_pointer"></span> 기본문구</label>
+                                </li>
+                                <li>
+                                    <input type="radio" class="radio_style" id="txtarea2" name="txtarea">
+                                    <label for="txtarea2"><span class="radio_pointer"></span> 직접입력</label>
+                                </li>
+                            </ul>
+                            <textarea name="" id="" cols="30" rows="10">
+    
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="board_table">
+                <div class="bt_title">내 거래정보</div>
+                <div class="bt_box">
+                    <div class="bt_layer">
+                        <div class="bt_l">이름 <span class="star">*</span></div>
+                        <div class="bt_r">홍길동</div>
+                    </div>
+                    <div class="bt_layer">
+                        <div class="bt_l">연락처 <span class="star">*</span></div>
+                        <div class="bt_r phone_num">
+                            <p>02-1234-5678/010-1234-5678</p>
+                            <button type="button" class="btn_basic change_num btn_black">연락처 수정</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_box">
+                <button type="button" class="btn_basic btn_gray btn_b">등록취소</button>
+                <button type="button" class="btn_basic btn_b">구매등록</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

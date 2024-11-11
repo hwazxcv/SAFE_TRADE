@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{front/layouts/main}">
+
+<main layout:fragment="content">
+    <!-- 섹션 -->
+    <div class="section inner">
+        <div class="view view01 active">
+        <!-- 카테별 상품  목록 -->
+            <div class="title">
+                <h2>상품 목록</h2>
+            </div>
+            <div class="sub_title">
+                <div>카테</div>
+                <div class="sub_content">내용</div>
+                <div class="sub_price">가격</div>
+                <div class="sub_regDt">등록일자</div>
+            </div>
+            <div>
+                <ul class="table_style" th:each="item : ${items}" th:object="${item}">
+                    <li >
+                        <a th:href="@{/mypage/product/{seq}(seq=*{seq})}">
+                            <ul>
+                                <li th:text="*{type}"></li>
+                                <li class="txt" th:text="*{subject}"></li>
+                                <li class="price" th:text="*{#numbers.formatInteger(price, 3, 'COMMA') + '원'}"></li>
+                                <li class="date" th:text="*{#temporals.format(createdAt, 'yyyy.MM.dd HH:mm')}"></li>
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+                <th:block th:replace="~{common/_pagination::pagination}"></th:block>
+            </div>
+        </div>
+    </div>
+</main>
+</html>

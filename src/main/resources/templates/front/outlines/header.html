@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<header th:fragment="common">
+    <!-- 해더 -->
+    <div class="header">
+        <div class="head_top">
+            <div class="inner">
+                <ul class="top_menu">
+                    <th:block sec:authorize="isAuthenticated()">
+                        <li><a th:href="@{/mypage/main/index2}" th:text="#{마이페이지}"></a></li>
+                        <li><a th:href="@{/member/logout}" th:text="#{로그아웃}"></a></li>
+                        <li><a sec:authorize="hasAuthority('ADMIN')" th:href="@{/admin}" th:text="#{사이트_관리}" target="_blank"></a></li>
+                    </th:block>
+                    <th:block sec:authorize="isAnonymous()">
+                        <li><a th:href="@{/member/join}" th:text="#{회원가입}"></a></li>
+                        <li><a th:href="@{/member/login}" th:text="#{로그인}"></a></li>
+                    </th:block>
+
+                </ul>
+            </div>
+        </div>
+        <div class="head inner">
+            <div class="logo">
+                <a th:href="@{/}"><img th:src="@{/front/images/logo.png}" alt="로고"></a>
+            </div>
+            <form name="frmSearch" method="get" class="search_con" autocomplete="off" th:action="@{/}">
+                <ul class="radio_box">
+                    <li>
+                        <input type="radio" class="radio_style" id="buy" name="mode" value="buy" th:checked="${@utils.getParam('mode') == null || @utils.getParam('mode') == 'buy'}">
+                        <label for="buy"><span class="radio_pointer"></span> 삽니다</label>
+                    </li>
+                    <li>
+                        <input type="radio" class="radio_style" id="sale" name="mode" value="sell" th:checked="${@utils.getParam('mode') != null && @utils.getParam('mode') == 'sell'}">
+                        <label for="sale"><span class="radio_pointer"></span> 팝니다</label>
+                    </li>
+                </ul>
+                <div class="control">
+                    <div class="search_box">
+                        <input type="text" name="keyword" placeholder="검색어를 입력하세요." th:value="${@utils.getParam('keyword')}">
+                    </div>
+                    <button type="submit" class="btn_search">
+                        <img th:src="@{/front/images/icon-search.png}" alt="검색아이콘">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- //해더 -->
+    <!-- 카테고리 탭 -->
+    <ul class="category inner">
+        <li th:classappend="${menuCode == 'buy'} ? 'active'"><a th:href="@{/?mode=buy}">삽니다</a></li>
+        <li th:classappend="${menuCode == 'sell'} ? 'active'"><a th:href="@{/?mode=sell}">팝니다</a></li>
+        <li th:classappend="${menuCode == 'mypage'} ? 'active'"><a th:href="@{/mypage}">전체 물품</a></li>
+    </ul>
+    <!-- //카테고리 탭 -->
+</header>
+</html>

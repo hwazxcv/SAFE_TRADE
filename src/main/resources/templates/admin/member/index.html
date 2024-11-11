@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin/layouts/main}">
+<section layout:fragment="content">
+    <h1>회원 관리</h1>
+
+    <form th:method="post" th:action="@{/admin/member}" target="ifrmProcess" autocomplete="off">
+        <div>
+             <input type="hidden" name="mode" value="edit">
+            <table>
+                <div>
+                    <!--   <input>-->
+                   </div>
+                   <thead>
+                   <tr>
+                       <!-- <th><input type="checkbox" class="checkall" id="checkall" data-target-name="chkNo"> </th> -->
+                    <th th:text="#{이메일}"></th>
+                    <th th:text="#{회원명}"></th>
+                    <th th:text="#{휴대전화번호}"> </th>
+                    <th th:text="#{등급}"></th>
+                    <th th:text="#{가입일자}"> </th>
+                    <th> 관리</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="member : ${members}" th:object="${member}">
+                    <!--   <td><input type="checkbox" class="checkall" data-target-name="chkNo"></td> -->
+                       <td th:text="*{email}"></td>
+                       <td th:text="*{userNm}"></td>
+                       <td th:text="*{mobile}"></td>
+                       <td th:text="*{mtype}"></td>
+                       <td th:text="*{createdAt}"></td>
+                       <td>
+                           <button type="submit">회원 관리</button>
+                       </td>
+                   </tr>
+                   </tbody>
+               </table>
+
+           </div>
+
+       </form>
+        <th:block th:replace="~{common/_pagination::pagination}"></th:block>
+   </section>
+   </html>

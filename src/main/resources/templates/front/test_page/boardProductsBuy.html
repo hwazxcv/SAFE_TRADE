@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board</title>
+
+    <link rel="stylesheet" href="./include/css/reset.css">
+    <link rel="stylesheet" href="./include/css/main.css">
+    <link rel="stylesheet" href="./include/css/sub.css">
+    
+</head>
+<body>
+    <!-- 해더 -->
+    <div class="header">
+        <div class="head_top">
+            <div class="inner">
+                <ul class="top_menu">
+                    <li>
+                        <a href="">회원가입</a>
+                    </li>
+                    <li>
+                        <a href="">로그인</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="head inner">
+            <div class="logo">
+                <img src="./include/images/logo.png" alt="로고">
+            </div>
+            <div class="search_con">
+                <ul class="radio_box">
+                    <li>
+                        <input type="radio" class="radio_style" id="buy" name="search_radio" checked>
+                        <label for="buy"><span class="radio_pointer"></span> 삽니다</label>
+                    </li>
+                    <li>
+                        <input type="radio" class="radio_style" id="sale" name="search_radio">
+                        <label for="sale"><span class="radio_pointer"></span> 팝니다</label>
+                    </li>
+                </ul>
+                <div class="control">
+                    <div class="search_box">
+                        <input type="text" placeholder="검색어를 입력하세요.">
+                    </div>
+                    <button type="button" class="btn_search">
+                        <img src="./include/images/icon-search.png" alt="검색아이콘">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //해더 -->
+
+    <div class="section inner">
+        <div class="board_con">
+            <div class="board_title">
+                <h2>구매하기
+                    <span>구매 전 정보를 한번 더 확인해 주세요</span>
+                </h2>
+            </div>
+            <div class="board_table">
+                <div class="bt_title">물품정보</div>
+                <div class="bt_box">
+                    <div class="bt_layer">
+                        <div class="bt_l">물품제목 <span class="star">*</span></div>
+                        <div class="bt_r">★안전한 200% 신용★ 현재 접속중입니다.</div>
+                    </div>
+                    <div class="bt_layer">
+                        <div class="bt_l">등록일시</div>
+                        <div class="bt_r">2023-11-23 18:38:26</div>
+                    </div>
+                    <div class="bt_layer">
+                        <div class="bt_l">판매금액</div>
+                        <div class="bt_r">100,000원</div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_box">
+                <button type="button" class="btn_basic btn_b">구매 신청</button>
+            </div>
+            <div class="board_table" style="margin-top: 70px;">
+                <div class="bt_title">상세설명</div>
+                <div class="warning2" style="margin-top:0">
+                    <ul class="img_list">
+                        <li>대충이미지들어가는자리</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

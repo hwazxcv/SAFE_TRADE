@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{front/layouts/main}">
+<main layout:fragment="content">
+
+    <div class="board_title">
+        <h2>판매정보 확인
+            <span>판매 정보를 한번 더 확인해 주세요</span>
+        </h2>
+    </div>
+    <div class="section inner flex">
+        <div class="side_con">
+            <h3>안전거래수칙</h3>
+
+            <ul class="txt_list">
+                <li>구매자 연락처 확인
+                    <ul>
+                        <li>상대 거래자의 연 락처, 캐릭터명을 반드시 확인합니다.</li>
+                        <li>결제가 완료되면 마이룸에서 구매자 정보를 확인하실 수 있습니다.</li>
+                    </ul>
+                </li>
+                <li>안전거래 TEST_메세지!
+                    <ul>
+                        <li>안전거래 TEST_메세지!</li>
+                        <li>전화통화 또는 직접적인 대화를 하여 거래를 하시기 바랍니다.</li>
+                    </ul>
+                </li>
+                <li>고의적 취소, 직거래유도 주의
+                    <ul>
+                        <li>고의적인 취소 또는 직거래를 유도할 경우 사이트 이용에 제한을 받으실 수 있습니다.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="warning">다른사람의 정보를 기재하거나 다른 거래신청을 하여 문제가 발생할 경우, 거래신청자에게 책임이 있습니다.</p>
+        </div>
+        <div class="board_con">
+            <div class="board_table">
+                <div class="bt_title">물품정보</div>
+                <div class="bt_box">
+                    <div class="bt_layer">
+                        <div class="bt_l">물품제목</div>
+                        <div class="bt_r">팝니다 TEST_ONE</div>
+                    </div>
+                    <div class="bt_layer">
+                        <div class="bt_l">등록일시</div>
+                        <div class="bt_r">2023-11-23 18:38:26</div>
+                    </div>
+                    <div class="bt_layer">
+                        <div class="bt_l">판매금액</div>
+                        <div class="bt_r">100,000원</div>
+                    </div>
+                </div>
+            </div>
+            <div class="board_table">
+                <div class="bt_title">내 거래정보</div>
+                <div class="bt_box">
+                    <div class="bt_layer">
+                        <div class="bt_l">이름<span class="star">*</span></div>
+                        <div class="bt_r">홍길동</div>
+                    </div>
+                    <div class="bt_layer">
+                        <div class="bt_l">연락처 <span class="star">*</span></div>
+                        <div class="bt_r phone_num">
+                            <p>02-1234-5678/010-1234-5678</p>
+                            <button type="button" class="btn_basic change_num btn_black">연락처 수정</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_box">
+                <button type="button" class="btn_basic btn_b">판매신청</button>
+            </div>
+            <div class="warning2">
+                <ul>
+                    <li>안전거래 TEST_메세지!</li>
+                    <li>아래글 읽은뒤 연락주세요</li>
+                    <li>판매신청후 구매자의 신분을 확인해 주세요.</li>
+                    <li>안전거래 TEST_메세지!.</li>
+                </ul>
+            </div>
+            <button type="button" class="btn_more">+ More View</button>
+        </div>
+    </div>
+</main>
+</html>

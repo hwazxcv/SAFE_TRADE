@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="common" th:object="${requestTrade}"> <!-- 커맨드 객체 연동 -->
+    <input type="hidden" name="gid" th:field="*{gid}"> <!-- form에있는 입력할 수 있는 태그는 field로 -> *{gid}(선택변수식) => 커맨드객체 선언하고 하단에 내부속성들만 우리가 선언하면 됨 -->
+    <input type="file" id="file" class="dn">
+    <dl>
+        <dt>거래 종류</dt>
+        <dd>
+            <input type="radio" name="type" value="SELL" id="type_sell" th:field="*{type}"> <!-- crue들어가기전 enum상수정의(TradeType생성) -->
+            <label for="type_sell">팝니다</label>
+            <input type="radio" name="type" value="BUY" id="type_buy" th:field="*{type}">
+            <label for="type_buy">삽니다</label>
+            <div class="errors" th:each="err : ${#fields.errors('type')}" th:text="${err}"></div>
+        </dd>
+    </dl>
+    <dl>
+        <dt>제목</dt>
+        <dd>
+            <input type="text" name="subject" th:field="*{subject}">
+            <!-- 에러연동 -->
+            <div class="errors" th:each="err : ${#fields.errors('subject')}" th:text="${err}"></div>
+
+        </dd>
+    </dl>
+    <dl>
+        <dt>내용</dt>
+        <dd>
+            <textarea name="content" id="content" th:field="*{content}"></textarea>
+            <div class="errors" th:each="err : ${#fields.errors('content')}" th:text="${err}"></div>
+            <button type="button" class="upload_files" data-image-only="true" data-location="editor">이미지 첨부</button>
+            <div id="editor_images"></div>
+        </dd>
+    </dl>
+    <dl>
+        <dt>가격</dt>
+        <dd>
+            <input type="number" name="price" th:field="*{price}">
+            <div class="errors" th:each="err : ${#fields.errors('price')}" th:text="${err}"></div>
+        </dd>
+    </dl>
+    <script th:replace="~{common/_file_tpl::tpl_editor}"></script>
+</th:block>
+</html>
